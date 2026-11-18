@@ -198,7 +198,7 @@ onMounted(() => {
           
           <div class="grid md:grid-cols-2 gap-8 items-start border-t border-[#E5E5E5]/20 pt-8 mt-12">
             <p class="font-mono text-xs md:text-sm opacity-70 leading-relaxed text-justify">
-              Fullstack Software Engineer architecting scalable financial platforms, robust ERP infrastructures, and high-performance web systems. Merging clean architecture and database efficiency with modern frameworks across Laravel, FastAPI, Nuxt 3, and Next.js.
+              Fullstack Software Engineer architecting scalable financial platforms, robust ERP infrastructures, and high-performance web systems. Merging clean architecture across Laravel, FastAPI, and Nuxt/Next.js with practical delivery of client CMS and standard SEO.
             </p>
             <div class="flex gap-4 md:justify-end">
               <a href="#projects" class="group flex items-center gap-3 border border-[#E5E5E5]/30 px-6 py-4 hover:bg-[#E5E5E5] hover:text-[#0A0A0A] transition-colors">
@@ -433,6 +433,22 @@ onMounted(() => {
               </div>
             </div>
 
+          </div>
+
+          <!-- Technical SEO & CMS Delivery Strip -->
+          <div class="md:col-span-4 border-t-2 border-[#0A0A0A] pt-8 grid grid-cols-1 md:grid-cols-2 gap-6 font-mono text-[11px] uppercase tracking-wider">
+            <div class="border border-[#0A0A0A]/30 p-4 bg-[#0A0A0A]/5">
+              <span class="font-bold text-[#0A0A0A] block mb-2">// TECHNICAL SEO & SPEED OPTIMIZATION</span>
+              <p class="text-[#0A0A0A]/80 lowercase first-letter:uppercase leading-relaxed">
+                Google Search Console, Google Site Kit, Open Graph protocols, sitemap & indexing monitoring, WebP compression, and browser caching layers.
+              </p>
+            </div>
+            <div class="border border-[#0A0A0A]/30 p-4 bg-[#0A0A0A]/5">
+              <span class="font-bold text-[#0A0A0A] block mb-2">// CLIENT CMS & WEB DELIVERY</span>
+              <p class="text-[#0A0A0A]/80 lowercase first-letter:uppercase leading-relaxed">
+                WordPress + Elementor, domain/DNS management, cPanel, and responsive business catalogs with direct WhatsApp checkout integration.
+              </p>
+            </div>
           </div>
         </div>
       </div>

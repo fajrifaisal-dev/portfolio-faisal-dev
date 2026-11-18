@@ -49,9 +49,10 @@ const stack = [
         Experienced in analyzing user requirements and building scalable solutions using
         User-Centered Design (UCD). Strong background in backend architecture and API development
         using Laravel, FastAPI, and Node.js, with modern frontend frameworks like Nuxt 3 and Vue.
+        Also experienced in delivering production-ready business websites (WordPress + Elementor) equipped with technical on-page SEO (Google Search Console, meta tags, Open Graph) and speed optimization (WebP, caching).
       </p>
       <p class="text-gray-400 text-sm md:text-base">
-        Based in Surabaya, East Java • Open for opportunities • Fullstack & Backend focused
+        Based in Surabaya, East Java • Open for opportunities • Fullstack & Systems focused
       </p>
     </div>
 
@@ -121,24 +122,21 @@ const stack = [
 
       <!-- FREELANCE -->
       <div class="p-4 md:p-5 border border-white/10 rounded-lg bg-white/5 space-y-2">
-        <p class="text-cyan-400 font-semibold text-sm md:text-base">Freelance Software Developer</p>
+        <p class="text-cyan-400 font-semibold text-sm md:text-base">Freelance Software & Web Developer</p>
         <p class="text-white text-sm md:text-base">Self-Employed / Remote Clients</p>
         <p class="text-gray-400 text-xs md:text-sm">2020 - Present</p>
         <p class="text-gray-400 text-sm leading-relaxed">
-          Delivered multiple web applications for SMEs and startups, including ERP systems,
-          landing pages, company profiles, and custom backend APIs.
-          Responsible for fullstack development, UI/UX design, and system deployment.
+          Delivered diverse web projects for SMEs and media clients—from custom ERPs to production-ready WordPress sites (Elementor, product catalogs, news portals). Configured on-page SEO essentials using free tools (Google Search Console, Google Site Kit, Open Graph metadata, sitemaps) alongside image compression (WebP) and caching for optimal page-speed performance.
         </p>
       </div>
 
       <!-- GRADESTUDIO -->
       <div class="p-4 md:p-5 border border-white/10 rounded-lg bg-white/5 space-y-2">
-        <p class="text-cyan-400 font-semibold text-sm md:text-base">UI/UX Designer & Frontend Developer</p>
+        <p class="text-cyan-400 font-semibold text-sm md:text-base">UI/UX Designer & Junior Frontend Developer</p>
         <p class="text-white text-sm md:text-base">Gradestudio.id</p>
         <p class="text-gray-400 text-xs md:text-sm">Sep 2019 - Mar 2023</p>
         <p class="text-gray-400 text-sm leading-relaxed">
-          Designed user-centered interfaces using Figma and developed prototypes using Flutter and CodeIgniter.
-          Conducted user research, usability testing, and created design documentation (BRD, UML, ERD, User Flow).
+          Designed UI/UX prototypes for 5+ clients using Figma and developed client websites with WordPress + Elementor. Built prototypes using Flutter and CodeIgniter, while preparing technical documentation (BRD, UML, ERD, User Flow).
         </p>
       </div>
 
