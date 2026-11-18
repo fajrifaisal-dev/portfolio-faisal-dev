@@ -115,7 +115,7 @@ const stack = [
         <p class="text-gray-400 text-sm leading-relaxed">
           Developed and maintained internal ERP system covering logistics, finance, HR, and operational modules.
           Implemented automation for reporting systems and improved data processing efficiency across departments.
-          Built using Laravel with full CRUD, reporting, and workflow optimization.
+          Maintained company web presence including re-engineering WordPress architecture from WPBakery to Elementor.
         </p>
       </div>
 

@@ -1,7 +1,88 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 
 const isMobileMenuOpen = ref(false)
+const activeFilter = ref('ALL')
+
+const projectsList = [
+  {
+    slug: 'lsj-express',
+    title: 'LSJ Express ERP & Booking',
+    tag: '01 // Laravel . Vue',
+    category: 'SYSTEMS',
+    image: '/gambar/Gemini_Generated_Image_s8jg06s8jg06s8jg.jpg',
+    description: 'Sistem ERP komprehensif, booking system operasional, dan company profile untuk PT Lintas Samudera Jaya Express.'
+  },
+  {
+    slug: 'hello-friday',
+    title: 'Hello Friday Studio',
+    tag: '02 // Next.js . TS',
+    category: 'SYSTEMS',
+    image: '/gambar/hello-friday-booking-surabaya.jpg',
+    description: 'Premium slow-living platform replacing manual chat workflows with an interactive, centralized multi-branch Booking Self-Service.'
+  },
+  {
+    slug: 'kazi-nail',
+    title: 'Kazi Nail Beauty Bar',
+    tag: '03 // Next.js . Tailwind',
+    category: 'SYSTEMS',
+    image: '/gambar/kazi-nail-outlet-locator.jpg',
+    description: 'Dynamic portal for 15+ outlets across Java. Features Instant Outlet Locator, real-time catalog pricing, and custom WhatsApp routing systems.'
+  },
+  {
+    slug: 'erp-accounting',
+    title: 'ERP Soft Accounting',
+    tag: '04 // FastAPI . Nuxt 3',
+    category: 'SYSTEMS',
+    image: '/gambar/pos_system_mockup.png',
+    description: 'Sistem akuntansi ERP komprehensif, mengelola General Ledger, Journaling, dan inventaris dengan efisiensi tingkat enterprise.'
+  },
+  {
+    slug: 'dalwa-payment',
+    title: 'Dalwa Payment Engine',
+    tag: '05 // Laravel 11 . Vue 3',
+    category: 'SYSTEMS',
+    image: '/gambar/santech-2.jpeg',
+    description: 'End-to-end VA/QRIS transaction initiation system with callbacks, signature validation, error handling, and retry mechanisms for hundreds of daily transactions.'
+  },
+  {
+    slug: 'santech',
+    title: 'Santech Interface',
+    tag: '06 // UI/UX . Frontend',
+    category: 'SYSTEMS',
+    image: '/gambar/santech.jpeg',
+    description: 'Architected the user interface for internal business operations, focusing strictly on data density, navigational efficiency, and zero-latency interactions.'
+  },
+  {
+    slug: 'lintang-kejora',
+    title: 'Lintang Kejora Gift',
+    tag: '07 // Web Platform . Caching',
+    category: 'WEBSITES',
+    image: '/gambar/lintang-kejora.jpg',
+    description: 'Website katalog souvenir pernikahan & tas etnik dengan gambar WebP terkompresi, cache responsif, dan optimasi SEO lokal Solo (Award Winner).'
+  },
+  {
+    slug: 'gosip-pontianak',
+    title: 'Gosip Pontianak',
+    tag: '08 // News Portal . SEO',
+    category: 'WEBSITES',
+    image: '/gambar/gosip-pontianak.jpg',
+    description: 'Portal berita & hiburan regional dengan struktur taksonomi kategori, integrasi Google Search Console untuk monitoring indexing, dan Open Graph metadata.'
+  },
+  {
+    slug: 'pontianak-keras',
+    title: 'Pontianak Keras',
+    tag: '09 // Media Profile . Web',
+    category: 'WEBSITES',
+    image: '/gambar/pontianak-keras.jpg',
+    description: 'Platform profil media digital dengan setup domain/DNS, layout modern teroptimasi, dan antarmuka responsif.'
+  }
+]
+
+const filteredProjects = computed(() => {
+  if (activeFilter.value === 'ALL') return projectsList
+  return projectsList.filter(p => p.category === activeFilter.value)
+})
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -99,7 +180,7 @@ onMounted(() => {
             </div>
             <div class="flex flex-col border-t border-[#E5E5E5]/10 pt-4 mt-2">
               <span class="mb-1 opacity-50">Specialization</span>
-              <span class="text-[#E5E5E5] opacity-100">Backend & ERP Architecture</span>
+              <span class="text-[#E5E5E5] opacity-100">Fullstack & ERP Architecture</span>
             </div>
             <div class="mt-8 border border-[#E5E5E5]/20 p-3 inline-block w-fit">
               [ READY FOR DEPLOYMENT ]
@@ -117,7 +198,7 @@ onMounted(() => {
           
           <div class="grid md:grid-cols-2 gap-8 items-start border-t border-[#E5E5E5]/20 pt-8 mt-12">
             <p class="font-mono text-xs md:text-sm opacity-70 leading-relaxed text-justify">
-              I do not build templates. I architect robust financial systems, ERP infrastructures, and payment integrations that scale. Merging strict logic with high-performance execution using Laravel, FastAPI, and Next.js.
+              Fullstack Software Engineer architecting scalable financial platforms, robust ERP infrastructures, and high-performance web systems. Merging clean architecture and database efficiency with modern frameworks across Laravel, FastAPI, Nuxt 3, and Next.js.
             </p>
             <div class="flex gap-4 md:justify-end">
               <a href="#projects" class="group flex items-center gap-3 border border-[#E5E5E5]/30 px-6 py-4 hover:bg-[#E5E5E5] hover:text-[#0A0A0A] transition-colors">
@@ -164,7 +245,7 @@ onMounted(() => {
             </div>
             
             <div class="lg:col-span-6 font-mono text-xs md:text-sm leading-relaxed opacity-70 text-justify">
-              Architecting web-based accounting ERPs for digital distribution and PPOB (Miharogames, PT Mitra Distribusi Utama). Handling core financial modules (General Ledger, Journal, Purchasing) and Midtrans/Espay payment integrations to guarantee high-volume transaction efficiency.
+              Membangun ERP akuntansi (FastAPI, Nuxt 3) untuk PT Mitra Distribusi Utama (General Ledger, jurnal otomatis, mutasi bank, rekonsiliasi, PPh unifikasi, stok FIFO), platform PPOB Miharogames Store (Midtrans & Espay, refund otomatis, 2FA, dashboard admin), dan ERP Web Order (React, Next.js) untuk PT Central Surya Baru. Mengelola deployment server Linux, DNS/domain, dan backup berkala dengan cron.
             </div>
             
             <div class="lg:col-span-3">
@@ -179,7 +260,7 @@ onMounted(() => {
             <div class="lg:col-span-3 flex flex-col justify-between">
               <div>
                 <div class="font-mono text-[10px] border border-[#E5E5E5]/30 px-2 py-1 inline-block mb-4 tracking-widest opacity-60">
-                  [ ARCHIVED // 2023 - 2025 ]
+                  [ ARCHIVED // 2022 - 2025 ]
                 </div>
                 <h3 class="text-2xl font-bold uppercase">Staff IT<br/><span class="text-transparent" style="-webkit-text-stroke: 1px #E5E5E5;">Web Dev</span></h3>
               </div>
@@ -187,7 +268,7 @@ onMounted(() => {
             </div>
             
             <div class="lg:col-span-6 font-mono text-xs md:text-sm leading-relaxed opacity-70 text-justify">
-              Built and maintained the company's internal logistics ERP from scratch featuring 10+ modules (Finance, Accounts Receivable, SLA). Successfully automated HR reporting processes, cutting execution time from 7 hours down to 5 minutes.
+              Membangun ERP logistik internal (Laravel) dari nol untuk 10+ modul operasional (STT, Keuangan, Piutang, Absensi, SLA) dipakai 20–60 user di 3 cabang, serta mengotomatisasi pelaporan harian menjadi hitungan menit. Memelihara website perusahaan dan memodernisasi arsitekturnya (migrasi dari WPBakery ke Elementor).
             </div>
             
             <div class="lg:col-span-3 flex flex-col gap-2">
@@ -232,116 +313,58 @@ onMounted(() => {
     <section id="projects" class="min-h-screen px-4 md:px-8 py-24 border-t border-[#E5E5E5]/20 bg-[#0A0A0A]">
       <div class="max-w-[1600px] mx-auto w-full">
         
-        <h2 class="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-16 md:mb-24">
-          Deployed
-          <br />
-          <span class="text-transparent" style="-webkit-text-stroke: 1px #E5E5E5;">Systems.</span>
-        </h2>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+          <h2 class="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
+            Deployed
+            <br />
+            <span class="text-transparent" style="-webkit-text-stroke: 1px #E5E5E5;">Systems.</span>
+          </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-24">
-          
-          <!-- SYS 01: LSJ EXPRESS -->
-          <NuxtLink to="/projects/lsj-express" class="group cursor-pointer block animate-on-scroll opacity-0 translate-y-12 transition-all duration-1000">
+          <!-- Category Filter Tabs -->
+          <div class="flex flex-wrap gap-2 font-mono text-[10px] uppercase tracking-widest">
+            <button 
+              @click="activeFilter = 'ALL'"
+              :class="activeFilter === 'ALL' ? 'bg-[#E5E5E5] text-[#0A0A0A] font-bold' : 'border border-[#E5E5E5]/20 text-[#E5E5E5]/60 hover:text-[#E5E5E5] hover:border-[#E5E5E5]/50'"
+              class="px-4 py-2 transition-all">
+              [ ALL // 09 ]
+            </button>
+            <button 
+              @click="activeFilter = 'SYSTEMS'"
+              :class="activeFilter === 'SYSTEMS' ? 'bg-[#E5E5E5] text-[#0A0A0A] font-bold' : 'border border-[#E5E5E5]/20 text-[#E5E5E5]/60 hover:text-[#E5E5E5] hover:border-[#E5E5E5]/50'"
+              class="px-4 py-2 transition-all">
+              [ CORE SYSTEMS // 06 ]
+            </button>
+            <button 
+              @click="activeFilter = 'WEBSITES'"
+              :class="activeFilter === 'WEBSITES' ? 'bg-[#E5E5E5] text-[#0A0A0A] font-bold' : 'border border-[#E5E5E5]/20 text-[#E5E5E5]/60 hover:text-[#E5E5E5] hover:border-[#E5E5E5]/50'"
+              class="px-4 py-2 transition-all">
+              [ CLIENT WEBSITES // 03 ]
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 md:gap-y-24">
+          <NuxtLink 
+            v-for="(project, idx) in filteredProjects" 
+            :key="project.slug"
+            :to="`/projects/${project.slug}`" 
+            :class="[idx % 2 === 1 ? 'md:mt-24' : '']"
+            class="group cursor-pointer block transition-all duration-500"
+          >
             <div class="relative overflow-hidden border border-[#E5E5E5]/20 mb-6 bg-[#111]">
-              <img src="/gambar/Gemini_Generated_Image_s8jg06s8jg06s8jg.jpg" alt="LSJ Express" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700 z-0 relative" />
+              <img :src="project.image" :alt="project.title" class="w-full h-64 md:h-80 object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700 z-0 relative" />
               <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent opacity-60 z-10 pointer-events-none group-hover:opacity-20 transition-all duration-700"></div>
             </div>
             <div class="flex items-start justify-between gap-4">
               <div>
-                <div class="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-2">01 // Laravel . Vue</div>
-                <h3 class="text-2xl font-bold uppercase tracking-tighter mb-3 group-hover:text-emerald-400 transition-colors">LSJ Express ERP & Booking</h3>
+                <div class="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-2">{{ project.tag }}</div>
+                <h3 class="text-2xl font-bold uppercase tracking-tighter mb-3 group-hover:text-emerald-400 transition-colors">{{ project.title }}</h3>
                 <p class="font-mono text-xs opacity-70 leading-relaxed max-w-sm text-justify">
-                  Sistem ERP komprehensif, booking system operasional, dan company profile untuk PT Lintas Samudera Jaya Express.
+                  {{ project.description }}
                 </p>
               </div>
             </div>
           </NuxtLink>
-
-          <!-- SYS 02: HELLO FRIDAY -->
-          <NuxtLink to="/projects/hello-friday" class="group cursor-pointer block md:mt-32 animate-on-scroll opacity-0 translate-y-12 transition-all duration-1000 delay-100">
-            <div class="relative overflow-hidden border border-[#E5E5E5]/20 mb-6 bg-[#111]">
-              <img src="/gambar/hello-friday-booking-surabaya.jpg" alt="Hello Friday" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700 z-0 relative" />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent opacity-60 z-10 pointer-events-none group-hover:opacity-20 transition-all duration-700"></div>
-            </div>
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-2">02 // Next.js . TS</div>
-                <h3 class="text-2xl font-bold uppercase tracking-tighter mb-3 group-hover:text-emerald-400 transition-colors">Hello Friday Studio</h3>
-                <p class="font-mono text-xs opacity-70 leading-relaxed max-w-sm text-justify">
-                  Premium slow-living platform replacing manual chat workflows with an interactive, centralized multi-branch Booking Self-Service.
-                </p>
-              </div>
-            </div>
-          </NuxtLink>
-
-          <!-- SYS 03: KAZI -->
-          <NuxtLink to="/projects/kazi-nail" class="group cursor-pointer block animate-on-scroll opacity-0 translate-y-12 transition-all duration-1000">
-            <div class="relative overflow-hidden border border-[#E5E5E5]/20 mb-6 bg-[#111]">
-              <img src="/gambar/kazi-nail-outlet-locator.jpg" alt="Kazi Nail" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700 z-0 relative" />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent opacity-60 z-10 pointer-events-none group-hover:opacity-20 transition-all duration-700"></div>
-            </div>
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-2">03 // Next.js . Tailwind</div>
-                <h3 class="text-2xl font-bold uppercase tracking-tighter mb-3 group-hover:text-emerald-400 transition-colors">Kazi Nail Beauty Bar</h3>
-                <p class="font-mono text-xs opacity-70 leading-relaxed max-w-sm text-justify">
-                  Dynamic portal for 15+ outlets across Java. Features Instant Outlet Locator, real-time catalog pricing, and custom WhatsApp routing systems.
-                </p>
-              </div>
-            </div>
-          </NuxtLink>
-
-          <!-- SYS 04: ERP SOFT ACCOUNTING -->
-          <NuxtLink to="/projects/erp-accounting" class="group cursor-pointer block md:mt-32 animate-on-scroll opacity-0 translate-y-12 transition-all duration-1000 delay-100">
-            <div class="relative overflow-hidden border border-[#E5E5E5]/20 mb-6 bg-[#111]">
-              <img src="/gambar/pos_system_mockup.png" alt="ERP Soft Accounting" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700 z-0 relative" />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent opacity-60 z-10 pointer-events-none group-hover:opacity-20 transition-all duration-700"></div>
-            </div>
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-2">04 // FastAPI . Nuxt 3</div>
-                <h3 class="text-2xl font-bold uppercase tracking-tighter mb-3 group-hover:text-emerald-400 transition-colors">ERP Soft Accounting</h3>
-                <p class="font-mono text-xs opacity-70 leading-relaxed max-w-sm text-justify">
-                  Sistem akuntansi ERP komprehensif, mengelola General Ledger, Journaling, dan inventaris dengan efisiensi tingkat enterprise.
-                </p>
-              </div>
-            </div>
-          </NuxtLink>
-
-          <!-- SYS 05: DALWA -->
-          <NuxtLink to="/projects/dalwa-payment" class="group cursor-pointer block animate-on-scroll opacity-0 translate-y-12 transition-all duration-1000">
-            <div class="relative overflow-hidden border border-[#E5E5E5]/20 mb-6 bg-[#111]">
-              <img src="/gambar/santech-2.jpeg" alt="Dalwa Payment" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700 z-0 relative" />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent opacity-60 z-10 pointer-events-none group-hover:opacity-20 transition-all duration-700"></div>
-            </div>
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-2">05 // Laravel 11 . Vue 3</div>
-                <h3 class="text-2xl font-bold uppercase tracking-tighter mb-3 group-hover:text-emerald-400 transition-colors">Dalwa Payment Engine</h3>
-                <p class="font-mono text-xs opacity-70 leading-relaxed max-w-sm text-justify">
-                  End-to-end VA/QRIS transaction initiation system with callbacks, signature validation, error handling, and retry mechanisms for hundreds of daily transactions.
-                </p>
-              </div>
-            </div>
-          </NuxtLink>
-
-          <!-- SYS 06: SANTECH -->
-          <NuxtLink to="/projects/santech" class="group cursor-pointer block md:mt-32 animate-on-scroll opacity-0 translate-y-12 transition-all duration-1000 delay-100">
-            <div class="relative overflow-hidden border border-[#E5E5E5]/20 mb-6 bg-[#111]">
-              <img src="/gambar/santech.jpeg" alt="Santech" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700 z-0 relative" />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent opacity-60 z-10 pointer-events-none group-hover:opacity-20 transition-all duration-700"></div>
-            </div>
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-2">06 // UI/UX . Frontend</div>
-                <h3 class="text-2xl font-bold uppercase tracking-tighter mb-3 group-hover:text-emerald-400 transition-colors">Santech Interface</h3>
-                <p class="font-mono text-xs opacity-70 leading-relaxed max-w-sm text-justify">
-                  Architected the user interface for internal business operations, focusing strictly on data density, navigational efficiency, and zero-latency interactions.
-                </p>
-              </div>
-            </div>
-          </NuxtLink>
-
         </div>
       </div>
     </section>
@@ -374,11 +397,11 @@ onMounted(() => {
               <ul class="space-y-4 font-black uppercase text-xl md:text-2xl tracking-tighter">
                 <li>Laravel 11</li>
                 <li>FastAPI</li>
-                <li>Node.js</li>
-                <li>Golang</li>
+                <li>Node.js / NestJS</li>
+                <li>RESTful API</li>
               </ul>
               <div class="font-mono text-[10px] mt-8 opacity-60 group-hover:opacity-100">
-                REST API . Microservices . Auth
+                Architecture . Linux (SSH/Nginx) . Cron Jobs
               </div>
             </div>
 
@@ -386,27 +409,27 @@ onMounted(() => {
             <div class="p-6 sm:p-8 border-b-2 sm:border-b-0 sm:border-r-2 border-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#E5E5E5] transition-colors group">
               <div class="font-mono text-xs font-bold mb-8">02 // FRONTEND UI</div>
               <ul class="space-y-4 font-black uppercase text-xl md:text-2xl tracking-tighter">
-                <li>Vue 3 / Nuxt</li>
+                <li>Vue 3 / Nuxt 3</li>
                 <li>React / Next.js</li>
                 <li>Tailwind CSS</li>
                 <li>Inertia.js</li>
               </ul>
               <div class="font-mono text-[10px] mt-8 opacity-60 group-hover:opacity-100">
-                Reactivity . SSR . SPA
+                Reactivity . SSR/SPA . Performance & SEO
               </div>
             </div>
 
             <!-- Core 03 -->
             <div class="p-6 sm:p-8 hover:bg-[#0A0A0A] hover:text-[#E5E5E5] transition-colors group">
-              <div class="font-mono text-xs font-bold mb-8">03 // DB & INFRA</div>
+              <div class="font-mono text-xs font-bold mb-8">03 // DB & PAYMENTS</div>
               <ul class="space-y-4 font-black uppercase text-xl md:text-2xl tracking-tighter">
                 <li>PostgreSQL</li>
                 <li>MySQL</li>
-                <li>Redis</li>
-                <li>Midtrans/Espay</li>
+                <li>Midtrans / Espay</li>
+                <li>VA / QRIS Channels</li>
               </ul>
               <div class="font-mono text-[10px] mt-8 opacity-60 group-hover:opacity-100">
-                High IOPS . Payment Gateways
+                Relational Schema . Web Delivery & Tools
               </div>
             </div>
 

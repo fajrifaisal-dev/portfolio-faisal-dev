@@ -59,6 +59,36 @@ const projects = {
     description: 'Architected the user interface for internal business operations focusing on data density.',
     image: '/gambar/santech.jpeg',
     features: ['Data-dense Dashboard', 'Zero-latency Interactions', 'Role-based Access UI']
+  },
+  'lintang-kejora': {
+    title: 'Lintang Kejora Gift',
+    client: 'Lintang Kejora Gift Solo',
+    role: 'Web Developer',
+    tech: 'WordPress, Elementor, WebP, Caching Layer',
+    description: 'Website katalog souvenir pernikahan dan tas etnik dengan optimasi gambar WebP, caching responsif, serta penataan SEO on-page lokal (Solo). Berhasil mendukung bisnis hingga meraih Juara 2 Inovasi Award Disnakerperin Kota Surakarta.',
+    image: '/gambar/lintang-kejora.jpg',
+    liveUrl: 'https://lintangkejoragift.com',
+    features: ['Fast Mobile Catalog', 'WebP & Cache Optimization', 'Local SEO On-Page', 'Direct WhatsApp Ordering']
+  },
+  'gosip-pontianak': {
+    title: 'Gosip Pontianak',
+    client: 'Gosip Pontianak Media',
+    role: 'Web Developer & Site Admin',
+    tech: 'WordPress, Google Site Kit, Search Console, Open Graph',
+    description: 'Portal berita dan media informasi hiburan berbasis WordPress. Mengatur struktur taksonomi kategori, integrasi Google Search Console untuk monitoring indexing, serta optimasi metadata Open Graph agar artikel rapi saat dibagikan ke media sosial.',
+    image: '/gambar/gosip-pontianak.jpg',
+    liveUrl: 'https://gosippontianak.co.id',
+    features: ['News Category Architecture', 'Google Search Console Integration', 'Open Graph Metadata', 'Traffic & Indexing Monitoring']
+  },
+  'pontianak-keras': {
+    title: 'Pontianak Keras',
+    client: 'Pontianak Keras Indonesia',
+    role: 'Web Developer',
+    tech: 'WordPress, Nginx, Domain/DNS Setup',
+    description: 'Platform profil media digital Pontianak Keras. Menangani deployment dari konfigurasi hosting, manajemen domain & DNS, hingga penataan antarmuka responsif dan optimasi kecepatan aset.',
+    image: '/gambar/pontianak-keras.jpg',
+    liveUrl: 'https://pontianakkeras.id',
+    features: ['DNS & Hosting Configuration', 'Clean Modern Layout', 'Asset Speed Optimization', 'Responsive Architecture']
   }
 }
 
@@ -114,9 +144,9 @@ const project = projects[slug]
             This project required a meticulous approach to both system architecture and user interface logic. By prioritizing scalable data structures and a zero-fluff frontend execution, the resulting platform handles high-volume operations seamlessly while maintaining an elegant aesthetic standard.
           </p>
           
-          <div class="mt-12">
-             <a href="#" class="inline-block font-mono text-[10px] uppercase tracking-widest font-bold border border-[#E5E5E5]/30 px-8 py-4 hover:bg-[#E5E5E5] hover:text-[#0A0A0A] transition-colors">
-               [ VIEW LIVE DEPLOYMENT ]
+          <div class="mt-12" v-if="project.liveUrl">
+             <a :href="project.liveUrl" target="_blank" rel="noopener noreferrer" class="inline-block font-mono text-[10px] uppercase tracking-widest font-bold border border-[#E5E5E5]/30 px-8 py-4 hover:bg-[#E5E5E5] hover:text-[#0A0A0A] transition-colors">
+               [ VIEW LIVE DEPLOYMENT ↗ ]
              </a>
           </div>
         </div>
