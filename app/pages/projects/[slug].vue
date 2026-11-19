@@ -67,6 +67,7 @@ const projects = {
     tech: 'WordPress, Elementor, WebP, Caching Layer',
     description: 'Website katalog souvenir pernikahan dan tas etnik dengan optimasi gambar WebP, caching responsif, serta penataan SEO on-page lokal (Solo). Berhasil mendukung bisnis hingga meraih Juara 2 Inovasi Award Disnakerperin Kota Surakarta.',
     image: '/gambar/lintang-kejora.jpg',
+    gallery: ['/gambar/lintang-kejora-2.jpg', '/gambar/lintang-kejora-3.jpg'],
     liveUrl: 'https://lintangkejoragift.com',
     features: ['Fast Mobile Catalog', 'WebP & Cache Optimization', 'Local SEO On-Page', 'Direct WhatsApp Ordering']
   },
@@ -77,6 +78,7 @@ const projects = {
     tech: 'WordPress, Google Site Kit, Search Console, Open Graph',
     description: 'Portal berita dan media informasi hiburan berbasis WordPress. Mengatur struktur taksonomi kategori, integrasi Google Search Console untuk monitoring indexing, serta optimasi metadata Open Graph agar artikel rapi saat dibagikan ke media sosial.',
     image: '/gambar/gosip-pontianak.jpg',
+    gallery: ['/gambar/gosip-pontianak-2.jpg'],
     liveUrl: 'https://gosippontianak.co.id',
     features: ['News Category Architecture', 'Google Search Console Integration', 'Open Graph Metadata', 'Traffic & Indexing Monitoring']
   },
@@ -87,6 +89,7 @@ const projects = {
     tech: 'WordPress, Nginx, Domain/DNS Setup',
     description: 'Platform profil media digital Pontianak Keras. Menangani deployment dari konfigurasi hosting, manajemen domain & DNS, hingga penataan antarmuka responsif dan optimasi kecepatan aset.',
     image: '/gambar/pontianak-keras.jpg',
+    gallery: ['/gambar/pontianak-keras-2.jpg', '/gambar/pontianak-keras-3.jpg'],
     liveUrl: 'https://pontianakkeras.id',
     features: ['DNS & Hosting Configuration', 'Clean Modern Layout', 'Asset Speed Optimization', 'Responsive Architecture']
   }
@@ -148,6 +151,22 @@ const project = projects[slug]
              <a :href="project.liveUrl" target="_blank" rel="noopener noreferrer" class="inline-block font-mono text-[10px] uppercase tracking-widest font-bold border border-[#E5E5E5]/30 px-8 py-4 hover:bg-[#E5E5E5] hover:text-[#0A0A0A] transition-colors">
                [ VIEW LIVE DEPLOYMENT ↗ ]
              </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Gallery Showcase -->
+      <div v-if="project.gallery && project.gallery.length" class="mt-20 border-t border-[#E5E5E5]/20 pt-16">
+        <div class="font-mono text-xs font-bold uppercase tracking-widest mb-8 opacity-70">
+          // SCREEN ARCHIVES & DETAIL VIEWS
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div 
+            v-for="(img, gIdx) in project.gallery" 
+            :key="gIdx" 
+            class="border border-[#E5E5E5]/20 bg-[#111] p-2 md:p-4 shadow-[4px_4px_0px_0px_rgba(229,229,229,0.1)] overflow-hidden"
+          >
+            <img :src="img" :alt="`${project.title} detail ${gIdx + 1}`" class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700" />
           </div>
         </div>
       </div>
